@@ -1,0 +1,96 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'); */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* font-family: "Dancing Script", cursive; */
+}
+h1{
+    font-family: "Dancing Script", cursive;
+}
+.carousel-item img{
+    height: 100vh;
+    width: 100%;
+}
+.card-body img{
+    max-width: 70%;
+    min-height: 200px;
+}
+.carousel-caption h5{
+    color: white;
+    font-size: 3.2rem;
+    text-align: center;
+    /* margin-bottom: 200px; */
+}
+.carousel-caption p{
+    color: white;
+    font-size: 1.8rem;
+    font-weight: 900;
+    margin-bottom: 200px;
+}
+.blur-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  background: rgba(255, 255, 255, 0.3); /* semi-transparent */
+  backdrop-filter: blur(10px);          /* blur effect */
+  -webkit-backdrop-filter: blur(10px);  /* Safari support */
+  padding: 20px;
+  border-radius: 10px;
+  color: #000; /* optional: darker text for contrast */
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+.card i {
+  transition: transform 0.3s ease;
+}
+
+.card:hover i {
+  transform: rotate(10deg) scale(1.2);
+}
+.card {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover effect: lift + shadow */
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Color overlay using a pseudo-element */
+.card::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); /* Light overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 0;
+}
+
+/* Show the overlay on hover */
+.card:hover::after {
+  opacity: 1;
+}
+
+/* Make sure card-body content stays above the overlay */
+.card .card-body {
+  position: relative;
+  z-index: 1;
+}
